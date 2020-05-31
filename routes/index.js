@@ -19,6 +19,13 @@ router.get('/', function(req, res, next) {
   res.render('index', data);
 });
 
+// Create a post handler for our form
+router.post("/join", function(req, res, next) {
+  res.json({
+      data: "This is the Post Request Handler"
+  });
+});
+
 router.get('/json', function (req, res, next) {
   const data = {
     'text': 'hello there!',

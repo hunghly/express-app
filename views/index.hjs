@@ -57,6 +57,16 @@
         </li>
         {{/profiles}}
     </ol>
+
+    <form method="POST" action="/join">
+        <label for="name">Enter your name:</label>
+        <input type="text"id="name" name="name" placeholder="Name here"/>
+        <label for="city">Enter your city:</label>
+        <input type="text"id="city" name="city" placeholder="City here"/>
+        <label for="profession">Enter your profession:</label>
+        <input type="text"id="profession" name="profession" placeholder="Profession here"/>
+        <input type="submit" value="Add A Profile"/>
+    </form>
     <img src="/images/hung.png" class="img-fluid" alt="Responsive image">
 </div>
 
