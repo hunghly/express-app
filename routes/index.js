@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 const Moment = require('moment');
 
+const profiles = [
+  {name: 'Mike', city: 'San Antonio'},
+  {name: 'Hung', city: 'Dallas', profession: 'coder'},
+  {name: 'Tatiana', city: 'Carolina', profession: 'chemist'}
+];
+
 /* GET home page. */
 // returns the index html
 router.get('/', function(req, res, next) {
@@ -10,20 +16,23 @@ router.get('/', function(req, res, next) {
     name: 'Hung',
     time: Moment().format(),
     title: 'My Application',
-    profiles: [
-      {name: 'Mike', city: 'San Antonio'},
-      {name: 'Hung', city: 'Dallas', profession: 'coder'},
-      {name: 'Tatiana', city: 'Carolina', profession: 'chemist'}
-    ]
+    profiles: profiles
   }
   res.render('index', data);
 });
 
 // Create a post handler for our form
 router.post("/join", function(req, res, next) {
-  res.json({
-      data: "This is the Post Request Handler"
-  });
+  const body = req.body;
+  const params = req.param();
+  profiles.push(body);
+  res.redirect('/');
+  // console.log(body);
+  // console.log(params);
+  // res.json({
+  //     data: "This is the Post Request Handler",
+  //   body: body
+  // });
 });
 
 router.get('/json', function (req, res, next) {
