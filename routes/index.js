@@ -8,7 +8,13 @@ router.get('/', function(req, res, next) {
   // res.render('index.hjs', { title: 'Express' });
   const data = {
     name: 'Hung',
-    time: Moment().format()
+    time: Moment().format(),
+    title: 'My Application',
+    profiles: [
+      {name: 'Mike', city: 'San Antonio'},
+      {name: 'Hung', city: 'Dallas', profession: 'coder'},
+      {name: 'Tatiana', city: 'Carolina', profession: 'chemist'}
+    ]
   }
   res.render('index', data);
 });
