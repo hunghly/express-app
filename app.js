@@ -1,5 +1,5 @@
 var express = require('express');
-var path = require('path');
+var path = require('path'); // tool used to set file path
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -12,9 +12,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); // uses the public directory 
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hjs');
 
 module.exports = app;
