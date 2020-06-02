@@ -43,36 +43,16 @@
     </form>
   </div>
 </nav>
-<div>stuff {{something}}</div>
-<div class="container">
-    <h1>This is HTML</h1>
-    <p>My name is {{name}} </p>
-    <p>The time is: {{time}}</p>
-    <p>
-    {{#user}}
-       My username is {{username}}
-    {{/user}}
-    </p>
-    <ol>
-        {{#profiles}}
-        <li>{{name}} from {{city}}
-        {{#profession}}
-            works as a {{profession}}
-        {{/profession}}
-        </li>
-        {{/profiles}}
-    </ol>
 
-    <form method="POST" action="/join">
-        <label for="name">Enter your name:</label>
-        <input type="text"id="name" name="name" placeholder="Name here"/>
-        <label for="city">Enter your city:</label>
-        <input type="text"id="city" name="city" placeholder="City here"/>
-        <label for="profession">Enter your profession:</label>
-        <input type="text"id="profession" name="profession" placeholder="Profession here"/>
-        <input type="submit" value="Add A Profile"/>
+<div class="container">
+    <h1>Login</h1>
+    <form method='POST' action='/login'>
+        <input type="text" name="username" placeholder="enter username"/>
+        <br/>
+        <input type="password" name="password" placeholder="enter password"/>
+        <br/>
+        <input type="submit" value="log in"/>
     </form>
-    <img src="/images/hung.png" class="img-fluid" alt="Responsive image">
 </div>
 
 
